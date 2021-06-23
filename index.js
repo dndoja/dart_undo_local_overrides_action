@@ -4,7 +4,8 @@ const path = './pubspec.yaml'
 
 try {
     fs.readFile(path, 'utf8', (err, data) => {
-        if (!data || err) core.setFailed(err?.message ?? 'pubspec.yaml not found!')
+        if (err) core.setFailed(err.message)
+        if (!data) core.setFailed('pubspec.yaml not found!')
 
         const lines = data.split('\n')
         const overridesIndex = lines.indexOf('dependency_overrides:')
