@@ -2,4 +2,4 @@ name: 'Dart undo local overrides'
 description: 'Comments out path overrides in the dependency_overrides section of the pubspec.yaml'
 runs:
   using: 'node12'
-  main: 'index.js'
+  main: 'dist/index.js'
