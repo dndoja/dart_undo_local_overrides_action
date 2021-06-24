@@ -542,9 +542,10 @@ var __webpack_exports__ = {};
 (() => {
 const core = __nccwpck_require__(24);
 const fs = __nccwpck_require__(747);
-const path = './pubspec.yaml'
 
 try {
+    const path = core.getInput('pubspec-path');
+
     fs.readFile(path, 'utf8', (err, data) => {
         if (err) core.setFailed(err.message)
         if (!data) core.setFailed('pubspec.yaml not found!')
