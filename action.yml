@@ -3,3 +3,7 @@ description: 'Comments out path overrides in the dependency_overrides section of
 runs:
   using: 'node12'
   main: 'dist/index.js'
+inputs:
+  pubspec-path:
+    description: 'Path of the pubspe.yaml file'
+    default: './pubspec.yaml'

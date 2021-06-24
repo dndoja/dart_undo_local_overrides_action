@@ -1,8 +1,9 @@
 const core = require('@actions/core');
 const fs = require('fs');
-const path = './pubspec.yaml'
 
 try {
+    const path = core.getInput('pubspec-path');
+
     fs.readFile(path, 'utf8', (err, data) => {
         if (err) core.setFailed(err.message)
         if (!data) core.setFailed('pubspec.yaml not found!')
